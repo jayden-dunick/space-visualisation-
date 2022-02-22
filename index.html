@@ -1,0 +1,1297 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>D3 Experiment</title>
+    <meta name="viewport" content="initial-scale=1" />
+    <script src='files/jquery-3.6.0.min.js'></script>
+    <script src="files/d3.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="p5.min.js"></script>
+    <script src="addons/p5.sound.min.js"></script>
+</head>
+
+<body id="body" class="scrollBarNone">
+
+  <main id="main">
+    <section id="playlists" class="full">
+        <h1 class="instructions">
+            Playlist
+        </h1>
+        <article class="box">
+            <div class="wrap">
+                <button id="playPlaylist">Back</button>
+                <button id="toTheme2">Theme</button>
+            </div>
+        </article>
+        <section class="bar">
+            This is a bar
+        </section>
+    </section>
+
+    <section id="themes" class="full">
+        <h1 class="instructions">
+            Themes
+        </h1>
+        <article class="box">
+            <div class="link theme greyOverlay" style="background-color: #00ff00; box-shadow: 0px 0px 21px 22px #00ff00;">
+                <h2 class="shorthand">Music</h2>
+                <h3 class="longhand">Music</h3>
+                <p>Music</p>
+            </div>
+            <div class="link theme greyOverlay" style="background-color: #ff0800; box-shadow: 0px 0px 21px 22px #ff0800;">
+                <h2 class="shorthand">Charity</h2>
+                <h3 class="longhand">Charity</h3>
+                <p>Chari</p>
+            </div>
+            <div class="link theme greyOverlay" style="background-color: #0084ff; box-shadow: 0px 0px 21px 22px #0084ff;">
+                <h2 class="shorthand">Sustai-</h2>
+                <h3 class="longhand">Sustainability</h3>
+                <p>Susta</p>
+            </div>
+            <div class="link theme greyOverlay" style="background-color: #ff00bf; box-shadow: 0px 0px 21px 22px #ff00bf;">
+                <h2 class="shorthand">Climate</h2>
+                <h3 class="longhand">Climate</h3>
+                <p>Clima</p>
+            </div>
+            <div class="link theme greyOverlay" style="background-color: #ff0062; box-shadow: 0px 0px 21px 22px #ff0062;">
+                <h2 class="shorthand">Games</h2>
+                <h3 class="longhand">Games</h3>
+                <p>Games</p>
+            </div>
+            <div class="link theme greyOverlay" style="background-color: #e5ff00; box-shadow: 0px 0px 21px 22px #e5ff00;">
+                <h2 class="shorthand">Culture</h2>
+                <h3 class="longhand">Culture</h3>
+                <p>Cultu</p>
+            </div>
+            <div class="link theme greyOverlay" style="background-color: #00ff40; box-shadow: 0px 0px 21px 22px #00ff40;">
+                <h2 class="shorthand">Langua-</h2>
+                <h3 class="longhand">Language</h3>
+                <p>Langu</p>
+            </div>
+            <div class="link theme greyOverlay" style="background-color: #1f751f; box-shadow: 0px 0px 21px 22px #1f751f;">
+                <h2 class="shorthand">Technol-</h2>
+                <h3 class="longhand">Technology</h3>
+                <p>Techn</p>
+            </div>
+            <div class="link theme greyOverlay" style="background-color: #a19d79; box-shadow: 0px 0px 21px 22px #a19d79;">
+                <h2 class="shorthand">Design</h2>
+                <h3 class="longhand">Design</h3>
+                <p>Desig</p>
+            </div>
+            <div class="link theme greyOverlay" style="background-color: #611983; box-shadow: 0px 0px 21px 22px #611983;">
+                <h2 class="shorthand">Buildi-</h2>
+                <h3 class="longhand">Building</h3>
+                <p>Build</p>
+            </div>
+            <div class="link theme greyOverlay" style="background-color: #00ff00; box-shadow: 0px 0px 21px 22px #00ff00;">
+                <h2 class="shorthand">Corpor-</h2>
+                <h3 class="longhand">Corporate</h3>
+                <p>Corpo</p>
+            </div>
+            <div class="link theme greyOverlay" style="background-color: #ff0800; box-shadow: 0px 0px 21px 22px #ff0800;">
+                <h2 class="shorthand">Dance</h2>
+                <h3 class="longhand">Dance</h3>
+                <p>Dance</p>
+            </div>
+            <div class="link theme greyOverlay" style="background-color: #0084ff; box-shadow: 0px 0px 21px 22px #0084ff;">
+                <h2 class="shorthand">Science</h2>
+                <h3 class="longhand">Science</h3>
+                <p>Scien</p>
+            </div>
+            <div class="link theme greyOverlay" style="background-color: #ff00bf; box-shadow: 0px 0px 21px 22px #ff00bf;">
+                <h2 class="shorthand">Marine</h2>
+                <h3 class="longhand">Marine</h3>
+                <p>Marine</p>
+            </div>
+            <div class="link theme greyOverlay" style="background-color: #ff0062; box-shadow: 0px 0px 21px 22px #ff0062;">
+                <h2 class="shorthand">Animals</h2>
+                <h3 class="longhand">Animals</h3>
+                <p>Anima</p>
+            </div>
+            <div class="link theme greyOverlay" style="background-color: #e5ff00; box-shadow: 0px 0px 21px 22px #e5ff00;">
+                <h2 class="shorthand">Entert-</h2>
+                <h3 class="longhand">Entertainment</h3>
+                <p>Enter</p>
+            </div>
+            <div class="link theme greyOverlay" style="background-color: #00ff40; box-shadow: 0px 0px 21px 22px #00ff40;">
+                <h2 class="shorthand">Space</h2>
+                <h3 class="longhand">Space</h3>
+                <p>Space</p>
+            </div>
+            <div class="link theme greyOverlay" style="background-color: #1f751f; box-shadow: 0px 0px 21px 22px #1f751f;">
+                <h2 class="shorthand">Youth</h2>
+                <h3 class="longhand">Youth</h3>
+                <p>Youth</p>
+            </div>
+            <div class="link theme greyOverlay" style="background-color: #a19d79; box-shadow: 0px 0px 21px 22px #a19d79;">
+                <h2 class="shorthand">Design</h2>
+                <h3 class="longhand">Design</h3>
+                <p>Desig</p>
+            </div>
+            <div class="link theme greyOverlay" style="background-color: #611983; box-shadow: 0px 0px 21px 22px #611983;">
+                <h2 class="shorthand">Compute-</h2>
+                <h3 class="longhand">Computers</h3>
+                <p>Compu</p>
+            </div>
+
+            <div class="wrap">
+                <button id="toPlaylist">Playlist</button>
+                <button id="toTalk">Speakers</button>
+            </div>
+        </article>
+        <section id="themeBar" class="bar">
+            <article id="themeInfo">Theme name, description</article>
+            <article id="themeSelection">Chosen themes</article>
+        </section>
+    </section>
+
+    <section id="speakers" class="full">
+        <h1 class="instructions">
+            Speakers
+        </h1>
+        <article class="box">
+<!-- 
+            <div class="link music toBeSorted">music</div>
+            <div class="link music toBeSorted">music</div>
+            <div class="link music toBeSorted">music</div>
+            <div class="link music toBeSorted">music</div>
+            <div class="link music toBeSorted">music</div>
+            <div class="link chari toBeSorted">charity</div>
+            <div class="link chari toBeSorted">charity</div>
+            <div class="link chari toBeSorted">charity</div>
+            <div class="link chari toBeSorted">charity</div>
+            <div class="link chari toBeSorted">charity</div>
+            <div class="link susta toBeSorted">sustainability</div>
+            <div class="link susta toBeSorted">sustainability</div>
+            <div class="link susta toBeSorted">sustainability</div>
+            <div class="link susta toBeSorted">sustainability</div>
+            <div class="link susta toBeSorted">sustainability</div>
+            <div class="link clima toBeSorted">climate</div>
+            <div class="link clima toBeSorted">climate</div>
+            <div class="link clima toBeSorted">climate</div>
+            <div class="link clima toBeSorted">climate</div>
+            <div class="link clima toBeSorted">climate</div>
+            <div class="link games toBeSorted">games</div>
+            <div class="link games toBeSorted">games</div>
+            <div class="link games toBeSorted">games</div>
+            <div class="link games toBeSorted">games</div>
+            <div class="link games toBeSorted">games</div> -->
+ 
+            <div class="toBeSorted link talkNum nameB music" target="_parent">
+                <h6 class="initials">BG </h6> <br>
+                <h6 class="fullName">Billy Gammon</h6>
+                <br>
+                <h6 class="talkName">4 Men In A Boat</h6>
+            </div>
+            <div class="toBeSorted link talkC nameK music" target="_parent">
+                <h6 class="initials">KC </h6> <br>
+                <h6 class="fullName">Kaila Colbin</h6>
+                <br>
+                <h6 class="talkName">Climate Change</h6>
+            </div>
+            <div class="toBeSorted link talkC nameM games" target="_parent">
+                <h6 class="initials">MH </h6> <br>
+                <h6 class="fullName">Micheal Henderson</h6>
+                <br>
+                <h6 class="talkName">Corporate Anthropology</h6>
+            </div>
+            <div class="toBeSorted link talkN nameN clima" target="_parent">
+                <h6 class="initials">NP </h6> <br>
+                <h6 class="fullName">Nigel Parker</h6>
+                <br>
+                <h6 class="talkName">Failure Is The Best Possible Outcome</h6>
+            </div>
+            <div class="toBeSorted link talkI nameS clima" target="_parent">
+                <h6 class="initials">SG </h6> <br>
+                <h6 class="fullName">Scott Gilmour</h6>
+                <br>
+                <h6 class="talkName">I Have A Dream</h6>
+            </div>
+            <div class="toBeSorted link talkN nameR susti" target="_parent">
+                <h6 class="initials">RA </h6> <br>
+                <h6 class="fullName">Ray Avery</h6>
+                <br>
+                <h6 class="talkName">Medical Innovation & Applied Knowledge</h6>
+            </div>
+            <div class="toBeSorted link talkP nameG susti" target="_parent">
+                <h6 class="initials">GC </h6> <br>
+                <h6 class="fullName">Glen Compain</h6>
+                <br>
+                <h6 class="talkName">Policeman Etrordinaire Connecting With Youth</h6>
+            </div>
+            <div class="toBeSorted link talkT nameW games" target="_parent">
+                <h6 class="initials">WM </h6> <br>
+                <h6 class="fullName">Wendy McGuinness</h6>
+                <br>
+                <h6 class="talkName">The Danger of Now</h6>
+            </div>
+            <div class="toBeSorted link talkT nameR music" target="_parent">
+                <h6 class="initials">RK</h6> <br>
+                <h6 class="fullName">Robin Kelly</h6>
+                <br>
+                <h6 class="talkName">The Human Hologram</h6>
+            </div>
+            <div class="toBeSorted link talkZ nameB susti" target="_parent">
+                <h6 class="initials">BF </h6> <br>
+                <h6 class="fullName">Brenda Frist</h6>
+                <br>
+                <h6 class="talkName">Z Depth </h6>
+            </div>
+            <div class="toBeSorted link talkZ nameA clima" target="_parent">
+                <h6 class="initials">AB </h6> <br>
+                <h6 class="fullName">Andy Blood</h6>
+                <br>
+                <h6 class="talkName">Zombie Attack</h6>
+            </div>
+        
+        
+        
+        <!--
+        
+            <div class=" link talkE nameK " target="_parent">
+                <h6 class="initials">KS </h6> <br>
+                <h6 class="fullName">Kate Smith</h6>
+                <br>
+                <h6 class="talkName">Eating Big Fish</h6>
+        
+            </div>
+            <div class=" link talkG nameR " target="_parent">
+                <h6 class="initials">RL</h6> <br>
+                <h6 class="fullName">Richard Loseby</h6>
+                <br>
+                <h6 class="talkName"> Adventurer & Story Teller</h6>
+        
+            </div>
+            <div class=" link talkI nameO " target="_parent">
+                <h6 class="initials">OB </h6> <br>
+                <h6 class="fullName">One Beep</h6>
+                <br>
+                <h6 class="talkName">Imagineers</h6>
+        
+            </div>
+            <div class=" link talkS nameJ " target="_parent">
+                <h6 class="initials">JB </h6> <br>
+                <h6 class="fullName">Julie Blett</h6>
+                <br>
+                <h6 class="talkName">Star Jam</h6>
+        
+            </div>
+            <div class=" link talkW nameP " target="_parent">
+                <h6 class="initials">PJ </h6> <br>
+                <h6 class="fullName">Plum Jungle</h6>
+                <br>
+                <h6 class="talkName">What if... you love what you do</h6>
+        
+            </div>
+            <div class=" link talkW nameJ " target="_parent">
+                <h6 class="initials"> JM</h6> <br>
+                <h6 class="fullName">Jonathan Milne</h6>
+                <br>
+                <h6 class="talkName">What if... we paid attention to ordinary miracles?</h6>
+        
+            </div>
+            <div class=" link talkW nameD " target="_parent">
+                <h6 class="initials">DD</h6> <br>
+                <h6 class="fullName">Divya Dhar</h6>
+                <br>
+                <h6 class="talkName">What if... being young is the answer to eradicating proverty?</h6>
+        
+            </div>
+            <div class=" link talkW nameP " target="_parent">
+                <h6 class="initials">PB </h6> <br>
+                <h6 class="fullName">Privahini Bradoo</h6>
+                <br>
+                <h6 class="talkName">What if... you were not employed?</h6>
+        
+            </div>
+            <div class=" link talkW nameS " target="_parent">
+                <h6 class="initials">SK </h6> <br>
+                <h6 class="fullName">Stephen Knightly</h6>
+                <br>
+                <h6 class="talkName">What if...games could do good?</h6>
+        
+            </div>
+            <div class=" link talkW nameR " target="_parent">
+                <h6 class="initials">RW </h6> <br>
+                <h6 class="fullName">Richard b</h6>
+                <br>
+                <h6 class="talkName">Why NZ is poised to be a creative magnet</h6>
+            </div>
+        
+        
+        
+        
+            <div class=" link talkA nameJ " target="_parent">
+                <h6 class="initials">JW </h6> <br>
+                <h6 class="fullName">John Windsor</h6>
+                <br>
+                <h6 class="talkName">A discovery that could keep organs a</h6>
+        
+            </div>
+            <div class=" link talkB nameS " target="_parent">
+                <h6 class="initials">SG </h6> <br>
+                <h6 class="fullName">Sean Gourley</h6>
+                <br>
+                <h6 class="talkName">Big Data and the Rise of Augmented Intelligence</h6>
+            </div>
+            <div class=" link talkH nameD " target="_parent">
+                <h6 class="initials">DK </h6> <br>
+                <h6 class="fullName">David Krofcheck</h6>
+                <br>
+                <h6 class="talkName">Higgs boson, The Kiwi Connection</h6>
+            </div>
+            <div class=" link talkI nameA " target="_parent">
+                <h6 class="initials">AR </h6> <br>
+                <h6 class="fullName">Assil Russel</h6>
+                <br>
+                <h6 class="talkName">I CARE, Changing s In Iraq</h6>
+            </div>
+            <div class=" link talkI nameE " target="_parent">
+                <h6 class="initials">ER </h6> <br>
+                <h6 class="fullName">Emma Rogan</h6>
+                <br>
+                <h6 class="talkName">Inspiration Wherever You Are, The 100 Days Project</h6>
+            </div>
+            <div class=" link talkN nameM " target="_parent">
+                <h6 class="initials">MD </h6> <br>
+                <h6 class="fullName">Michelle Dickinson</h6>
+                <br>
+                <h6 class="talkName">Nanogirl, My Quest to Become a Superhero</h6>
+            </div>
+            <div class=" link talkB nameA " target="_parent">
+                <h6 class="initials">AP </h6> <br>
+                <h6 class="fullName">Andrew Patterson</h6>
+                <br>
+                <h6 class="talkName">Building Architecture from the Groud Up</h6>
+            </div>
+            <div class=" link talkR nameP " target="_parent">
+                <h6 class="initials">PC </h6> <br>
+                <h6 class="fullName">Paul Cameron</h6>
+                <br>
+                <h6 class="talkName">Reinventing Reading</h6>
+            </div>
+            <div class=" link talkS nameS " target="_parent">
+                <h6 class="initials">SM </h6> <br>
+                <h6 class="fullName">Sam Hunt</h6>
+                <br>
+                <h6 class="talkName">Sam Hunt at TEDxAuckland</h6>
+            </div>
+            <div class=" link talkS nameM " target="_parent">
+                <h6 class="initials">MS </h6> <br>
+                <h6 class="fullName">Matthew Simmons</h6>
+                <br>
+                <h6 class="talkName">Saving s with the world's largest subwoofer</h6>
+            </div>
+            <div class=" link talkT nameA " target="_parent">
+                <h6 class="initials">AK </h6> <br>
+                <h6 class="fullName">Alistair Knott</h6>
+                <br>
+                <h6 class="talkName">Teaching Computers To Talk</h6>
+            </div>
+            <div class=" link talkT nameP " target="_parent">
+                <h6 class="initials">PP </h6> <br>
+                <h6 class="fullName">Philip Patson</h6>
+                <br>
+                <h6 class="talkName">The Label Libel, A New look at Diversity</h6>
+            </div>
+            <div class=" link talkT nameP " target="_parent">
+                <h6 class="initials">PY </h6> <br>
+                <h6 class="fullName">Peter Young</h6>
+                <br>
+                <h6 class="talkName">The Last Ocean</h6>
+            </div>
+            <div class=" link talkT nameA " target="_parent">
+                <h6 class="initials">AP JT</h6> <br>
+                <h6 class="fullName">Aakash Polra & Jade Tan</h6>
+                <br>
+                <h6 class="talkName">The Mind Leading the Blind</h6>
+            </div>
+            <div class=" link talkT nameV " target="_parent">
+                <h6 class="initials">VS </h6> <br>
+                <h6 class="fullName">Victoria Spackman</h6>
+                <br>
+                <h6 class="talkName">The Wall, Making History Social</h6>
+            </div>
+            <div class=" link talkW nameP " target="_parent">
+                <h6 class="initials">PH </h6> <br>
+                <h6 class="fullName">Pip Hall</h6>
+                <br>
+                <h6 class="talkName">Wet Hot Beauties</h6>
+            </div>
+            <div class=" link talkW nameP " target="_parent">
+                <h6 class="initials">PW </h6> <br>
+                <h6 class="fullName">Paul Wood</h6>
+                <br>
+                <h6 class="talkName">What's Your Prison?</h6>
+            </div>
+        
+        
+        
+        
+            <div class=" link talkA nameM " target="_parent">
+                <h6 class="initials">MR </h6> <br>
+                <h6 class="fullName">Malcolm Rands</h6>
+                <br>
+                <h6 class="talkName">A new model for business</h6>
+            </div>
+            <div class=" link talkA nameA " target="_parent">
+                <h6 class="initials">AG </h6> <br>
+                <h6 class="fullName">Ash Graham</h6>
+                <br>
+                <h6 class="talkName">Ash Graham at TEDxAuckland</h6>
+            </div>
+            <div class=" link talkB nameM " target="_parent">
+                <h6 class="initials">MA </h6> <br>
+                <h6 class="fullName">Marina Alefosio</h6>
+                <br>
+                <h6 class="talkName">Black Polynesia</h6>
+            </div>
+            <div class=" link talkD nameJ " target="_parent">
+                <h6 class="initials">JM </h6> <br>
+                <h6 class="fullName">Joseph Michael</h6>
+                <br>
+                <h6 class="talkName">Dark Cloud/ White Light</h6>
+            </div>
+            <div class=" link talkD nameW " target="_parent">
+                <h6 class="initials">WI </h6> <br>
+                <h6 class="fullName">Welby Ings</h6>
+                <br>
+                <h6 class="talkName">Disobedient Thinking</h6>
+            </div>
+            <div class=" link talkF nameR " target="_parent">
+                <h6 class="initials">RP </h6> <br>
+                <h6 class="fullName">Robyn Paterson</h6>
+                <br>
+                <h6 class="talkName">Finding Mercy</h6>
+            </div>
+            <div class=" link talkH nameP " target="_parent">
+                <h6 class="initials">PR </h6> <br>
+                <h6 class="fullName">Pete Russell</h6>
+                <br>
+                <h6 class="talkName">Hacking the supply chain</h6>
+            </div>
+            <div class=" link talkI nameB " target="_parent">
+                <h6 class="initials">BG </h6> <br>
+                <h6 class="fullName">Brian Gashema</h6>
+                <br>
+                <h6 class="talkName">I Am Me</h6>
+            </div>
+            <div class=" link talkK nameL " target="_parent">
+                <h6 class="initials">LG </h6> <br>
+                <h6 class="fullName">Lillian Grace</h6>
+                <br>
+                <h6 class="talkName">Know your country</h6>
+            </div>
+            <div class=" link talkO nameD " target="_parent">
+                <h6 class="initials">DT </h6> <br>
+                <h6 class="fullName">David Trubridge</h6>
+                <br>
+                <h6 class="talkName">Our need to create</h6>
+            </div>
+            <div class=" link talkR nameR " target="_parent">
+                <h6 class="initials">RO </h6> <br>
+                <h6 class="fullName">Robert Or</h6>
+                <br>
+                <h6 class="talkName">Recipes for development</h6>
+            </div>
+            <div class=" link talkR nameS " target="_parent">
+                <h6 class="initials">ST </h6> <br>
+                <h6 class="fullName">Sophie Tamati</h6>
+                <br>
+                <h6 class="talkName">Reigniting a language</h6>
+            </div>
+            <div class=" link talkR nameS " target="_parent">
+                <h6 class="initials">SRF </h6> <br>
+                <h6 class="fullName">Sir Richard Faull</h6>
+                <br>
+                <h6 class="talkName">Rethinking the brain</h6>
+            </div>
+            <div class=" link talkS nameD " target="_parent">
+                <h6 class="initials">DW </h6> <br>
+                <h6 class="fullName">Dale Williams</h6>
+                <br>
+                <h6 class="talkName">Small town big change</h6>
+            </div>
+            <div class=" link talkT nameB " target="_parent">
+                <h6 class="initials">BS </h6> <br>
+                <h6 class="fullName">Brian Sweeney</h6>
+                <br>
+                <h6 class="talkName">The New Zealand story</h6>
+            </div>
+            <div class=" link talkT nameG " target="_parent">
+                <h6 class="initials">GT </h6> <br>
+                <h6 class="fullName">Grace Taylor</h6>
+                <br>
+                <h6 class="talkName">The power of words</h6>
+            </div>
+            <div class=" link talkW nameJ " target="_parent">
+                <h6 class="initials">JH </h6> <br>
+                <h6 class="fullName">Jimi Hunt</h6>
+                <br>
+                <h6 class="talkName">World's biggest waterslide</h6>
+            </div>
+            <div class=" link talkY nameH " target="_parent">
+                <h6 class="initials">HC </h6> <br>
+                <h6 class="fullName">Helen Clark</h6>
+                <br>
+                <h6 class="talkName">Yes she can</h6>
+            </div>
+        
+        
+        
+        
+        
+        
+            <div class=" link talkB nameM " target="_parent">
+                <h6 class="initials">MS </h6> <br>
+                <h6 class="fullName">Matt Stone</h6>
+                <br>
+                <h6 class="talkName">Beyond the zero waste restaurant</h6>
+            </div>
+            <div class=" link talkB nameM " target="_parent">
+                <h6 class="initials">MD </h6> <br>
+                <h6 class="fullName">Muskan Devta</h6>
+                <br>
+                <h6 class="talkName">Borrowing courage</h6>
+            </div>
+            <div class=" link talkB nameW " target="_parent">
+                <h6 class="initials">WK </h6> <br>
+                <h6 class="fullName">Waikare Komene</h6>
+                <br>
+                <h6 class="talkName">Building community on waste with Mihi(intro)&Waiata(outro)</h6>
+            </div>
+            <div class=" link talkC nameJ " target="_parent">
+                <h6 class="initials">JB </h6> <br>
+                <h6 class="fullName">John Boone</h6>
+                <br>
+                <h6 class="talkName">Collective flow</h6>
+            </div>
+            <div class=" link talkG nameC " target="_parent">
+                <h6 class="initials">CB </h6> <br>
+                <h6 class="fullName">Catherine Bell</h6>
+                <br>
+                <h6 class="talkName">Garden to table</h6>
+            </div>
+            <div class=" link talkG nameR " target="_parent">
+                <h6 class="initials">RW </h6> <br>
+                <h6 class="fullName">Rebecca Wadey</h6>
+                <br>
+                <h6 class="talkName">Growing through cancer</h6>
+            </div>
+            <div class=" link talkI nameL " target="_parent">
+                <h6 class="initials">LN </h6> <br>
+                <h6 class="fullName">Luke Nola</h6>
+                <br>
+                <h6 class="talkName">Ideas are nothing</h6>
+            </div>
+            <div class=" link talkI nameD " target="_parent">
+                <h6 class="initials">DD JB </h6> <br>
+                <h6 class="fullName">David Downs & Jon Bridges</h6>
+                <br>
+                <h6 class="talkName">Invention rewired</h6>
+            </div>
+            <div class=" link talkL nameV " target="_parent">
+                <h6 class="initials">VR </h6> <br>
+                <h6 class="fullName">Vaughan Rowsell</h6>
+                <br>
+                <h6 class="talkName">Living impossibly</h6>
+            </div>
+            <div class=" link talkL nameS " target="_parent">
+                <h6 class="initials">SL </h6> <br>
+                <h6 class="fullName">Sarah Longbottom</h6>
+                <br>
+                <h6 class="talkName">Love is not an option</h6>
+            </div>
+            <div class=" link talkN nameU " target="_parent">
+                <h6 class="initials">UC </h6> <br>
+                <h6 class="fullName">Urzila Carlson</h6>
+                <br>
+                <h6 class="talkName">No regrets</h6>
+            </div>
+            <div class=" link talkO nameM " target="_parent">
+                <h6 class="initials">MH </h6> <br>
+                <h6 class="fullName">Mohamed Hassan</h6>
+                <br>
+                <h6 class="talkName">Only house the holy</h6>
+            </div>
+            <div class=" link talkR nameV " target="_parent">
+                <h6 class="initials">VM </h6> <br>
+                <h6 class="fullName">Vivien Maidaborn</h6>
+                <br>
+                <h6 class="talkName">Radical management</h6>
+            </div>
+            <div class=" link talkS nameM " target="_parent">
+                <h6 class="initials">MA </h6> <br>
+                <h6 class="fullName">Mike Allsop</h6>
+                <br>
+                <h6 class="talkName">Small steps to the top of the world</h6>
+            </div>
+            <div class=" link talkS nameR " target="_parent">
+                <h6 class="initials">RC </h6> <br>
+                <h6 class="fullName">Rachel Callander</h6>
+                <br>
+                <h6 class="talkName">Super power baby project</h6>
+            </div>
+            <div class=" link talkS nameR " target="_parent">
+                <h6 class="initials">RM </h6> <br>
+                <h6 class="fullName">Rebecca Mills</h6>
+                <br>
+                <h6 class="talkName">Systems thinking for a better world</h6>
+            </div>
+            <div class=" link talkT nameR " target="_parent">
+                <h6 class="initials">RE </h6> <br>
+                <h6 class="fullName">Riley Elliott</h6>
+                <br>
+                <h6 class="talkName">Taking science primetime</h6>
+            </div>
+            <div class=" link talkT nameR " target="_parent">
+                <h6 class="initials">RE </h6> <br>
+                <h6 class="fullName">Richard Easther</h6>
+                <br>
+                <h6 class="talkName">The christmas tree and the universe</h6>
+            </div>
+        
+        
+        
+        
+        
+        
+            <div class=" link talkB nameS " target="_parent">
+                <h6 class="initials">SW </h6> <br>
+                <h6 class="fullName">Siouxsie Wiles</h6>
+                <br>
+                <h6 class="talkName">Building blocks of bias: Lego and gender</h6>
+            </div>
+            <div class=" link talkC nameT " target="_parent">
+                <h6 class="initials">TS </h6> <br>
+                <h6 class="fullName">Tom Scott</h6>
+                <br>
+                <h6 class="talkName">Cooning for peace</h6>
+            </div>
+            <div class=" link talkC nameS " target="_parent">
+                <h6 class="initials">SP </h6> <br>
+                <h6 class="fullName">Steve Pointing</h6>
+                <br>
+                <h6 class="talkName">Colony Eh? Humanity after alien contact</h6>
+            </div>
+            <div class=" link talkC nameD " target="_parent">
+                <h6 class="initials">DP </h6> <br>
+                <h6 class="fullName">Dale Pfeifer</h6>
+                <br>
+                <h6 class="talkName">Creating a good world one#at a time</h6>
+            </div>
+            <div class=" link talkD nameT " target="_parent">
+                <h6 class="initials">THOC </h6> <br>
+                <h6 class="fullName">The Hip Op-eration Crew</h6>
+                <br>
+                <h6 class="talkName">D Floor Damager</h6>
+            </div>
+            <div class=" link talkF nameH " target="_parent">
+                <h6 class="initials">HSC </h6> <br>
+                <h6 class="fullName">Hong Sheng Chiong</h6>
+                <br>
+                <h6 class="talkName">Fighting blindness with $20 and a sm phone</h6>
+            </div>
+            <div class=" link talkF nameS " target="_parent">
+                <h6 class="initials">SBH </h6> <br>
+                <h6 class="fullName">Sir Bob Harvey</h6>
+                <br>
+                <h6 class="talkName">Finding your place to lead from</h6>
+            </div>
+            <div class=" link talkI nameS " target="_parent">
+                <h6 class="initials">SH </h6> <br>
+                <h6 class="fullName">Shaun Hendy</h6>
+                <br>
+                <h6 class="talkName">Ingredients to grow innovation</h6>
+            </div>
+            <div class=" link talkL nameM " target="_parent">
+                <h6 class="initials">MC </h6> <br>
+                <h6 class="fullName">Max Cryer</h6>
+                <br>
+                <h6 class="talkName">Language evolution @ the cutting edge</h6>
+            </div>
+            <div class=" link talkM nameT " target="_parent">
+                <h6 class="initials">TI </h6> <br>
+                <h6 class="fullName">Tame Iti</h6>
+                <br>
+                <h6 class="talkName">Mana: The power in knowing who you are</h6>
+            </div>
+            <div class=" link talkM nameG " target="_parent">
+                <h6 class="initials">GH </h6> <br>
+                <h6 class="fullName">Gavin Healy</h6>
+                <br>
+                <h6 class="talkName">Media & addictions</h6>
+            </div>
+            <div class=" link talkR nameG " target="_parent">
+                <h6 class="initials">GS </h6> <br>
+                <h6 class="fullName">Grant Schofield</h6>
+                <br>
+                <h6 class="talkName">Recipe for access: putting the public into public health</h6>
+            </div>
+            <div class=" link talkT nameB " target="_parent">
+                <h6 class="initials">BJ </h6> <br>
+                <h6 class="fullName">Billie Jordan</h6>
+                <br>
+                <h6 class="talkName">The Hip Op-eration Crew: The world;s oldest dance troupe</h6>
+            </div>
+            <div class=" link talkU nameJ " target="_parent">
+                <h6 class="initials">JS </h6> <br>
+                <h6 class="fullName">Janette Searle</h6>
+                <br>
+                <h6 class="talkName">Using spare hands to make a difference</h6>
+            </div>
+            <div class=" link talkY nameR " target="_parent">
+                <h6 class="initials">RH SH </h6> <br>
+                <h6 class="fullName">Riley & Steve Hathaway</h6>
+                <br>
+                <h6 class="talkName">Young Ocean Explorers: using kids to connect with kids</h6>
+            </div>
+        
+        
+        
+        
+        
+            <div class=" link talkB nameK " target="_parent">
+                <h6 class="initials">KN </h6> <br>
+                <h6 class="fullName">Keith Ng</h6>
+                <br>
+                <h6 class="talkName">Bataman journalism and the pitfalls of total independence</h6>
+            </div>
+            <div class=" link talkB nameR " target="_parent">
+                <h6 class="initials">RL </h6> <br>
+                <h6 class="fullName">Richard Little</h6>
+                <br>
+                <h6 class="talkName">Building a robot army</h6>
+            </div>
+            <div class=" link talkB nameA " target="_parent">
+                <h6 class="initials">AT </h6> <br>
+                <h6 class="fullName">Adrien Taylor</h6>
+                <br>
+                <h6 class="talkName">Building bussiness from by-products</h6>
+            </div>
+            <div class=" link talkC nameM " target="_parent">
+                <h6 class="initials">MM </h6> <br>
+                <h6 class="fullName">Michael Moka</h6>
+                <br>
+                <h6 class="talkName">Cultural capital for corporates</h6>
+            </div>
+            <div class=" link talkD nameI " target="_parent">
+                <h6 class="initials">IM </h6> <br>
+                <h6 class="fullName">Ian McCrae</h6>
+                <br>
+                <h6 class="talkName">Digital Me and the rise of precision medicine</h6>
+            </div>
+            <div class=" link talkE nameT " target="_parent">
+                <h6 class="initials">TC </h6> <br>
+                <h6 class="fullName">Toby Carr</h6>
+                <br>
+                <h6 class="talkName">Employer student: learning about business b running one</h6>
+            </div>
+            <div class=" link talkF nameV " target="_parent">
+                <h6 class="initials">VR </h6> <br>
+                <h6 class="fullName">Vaughan Rowsell</h6>
+                <br>
+                <h6 class="talkName">Finding your inner weirdo</h6>
+            </div>
+            <div class=" link talkG nameJ " target="_parent">
+                <h6 class="initials">JHB </h6> <br>
+                <h6 class="fullName">Jess Holly Bates</h6>
+                <br>
+                <h6 class="talkName">Giving stereotypes the slip</h6>
+            </div>
+            <div class=" link talkG nameG " target="_parent">
+                <h6 class="initials">GL </h6> <br>
+                <h6 class="fullName">Georgia Lala</h6>
+                <br>
+                <h6 class="talkName">Growth through lazy innovation</h6>
+            </div>
+            <div class=" link talkM nameB   static " target="_parent">
+                <h6 class="initials">BB </h6> <br>
+                <h6 class="fullName">Barbara Breen</h6>
+                <br>
+                <h6 class="talkName">Mapping by drones - Africa to Antica</h6>
+            </div>
+            <div class=" link talkM nameL " target="_parent">
+                <h6 class="initials">LM </h6> <br>
+                <h6 class="fullName">Lizzie Marvelly</h6>
+                <br>
+                <h6 class="talkName">My bodymy terms: a new conversation about sex</h6>
+            </div>
+            <div class=" link talkO nameC " target="_parent">
+                <h6 class="initials">CBM </h6> <br>
+                <h6 class="fullName">Cori Gonzalez-Macuer</h6>
+                <br>
+                <h6 class="talkName">Out of the shadows: my father's suicide</h6>
+            </div>
+            <div class=" link talkP nameR " target="_parent">
+                <h6 class="initials">RA </h6> <br>
+                <h6 class="fullName">Richard Aston</h6>
+                <br>
+                <h6 class="talkName">Putting human caring back into social services</h6>
+            </div>
+            <div class=" link talkR nameM " target="_parent">
+                <h6 class="initials">MS </h6> <br>
+                <h6 class="fullName">Matt Shirtcliffe</h6>
+                <br>
+                <h6 class="talkName">Reaching out to mental wellnes</h6>
+            </div>
+            <div class=" link talkR nameA " target="_parent">
+                <h6 class="initials">AC </h6> <br>
+                <h6 class="fullName">Anna Coddington</h6>
+                <br>
+                <h6 class="talkName">Release Me</h6>
+            </div>
+            <div class=" link talkS nameP " target="_parent">
+                <h6 class="initials">PF </h6> <br>
+                <h6 class="fullName">Pani Farvid</h6>
+                <br>
+                <h6 class="talkName">Saying goodbye to binary gender</h6>
+            </div>
+            <div class=" link talkS nameG " target="_parent">
+                <h6 class="initials">GC ST</h6> <br>
+                <h6 class="fullName">Grace Clapham & Solonia Teodros</h6>
+                <br>
+                <h6 class="talkName">Stepping Up to  Citizenship</h6>
+            </div>
+            <div class=" link talkT nameJ " target="_parent">
+                <h6 class="initials">JB </h6> <br>
+                <h6 class="fullName">James Bergin</h6>
+                <br>
+                <h6 class="talkName">Teaching about money in a cashless society</h6>
+            </div>
+            <div class=" link talkF nameF " target="_parent">
+                <h6 class="initials">FS </h6> <br>
+                <h6 class="fullName">FoodStory</h6>
+                <br>
+                <h6 class="talkName">FoodStory</h6>
+            </div>
+            <div class=" link talkT nameM " target="_parent">
+                <h6 class="initials">MB </h6> <br>
+                <h6 class="fullName">Minnie Barragwanath</h6>
+                <br>
+                <h6 class="talkName">The accessibility equation: valuing an accessible world for all</h6>
+            </div>
+            <div class=" link talkT nameS " target="_parent">
+                <h6 class="initials">SG </h6> <br>
+                <h6 class="fullName">Samuel Gibson</h6>
+                <br>
+                <h6 class="talkName">The Luckiest Boy In The World</h6>
+            </div>
+            <div class=" link talkT nameS " target="_parent">
+                <h6 class="initials">SP </h6> <br>
+                <h6 class="fullName">Sharad Paul</h6>
+                <br>
+                <h6 class="talkName">The Myth of Race</h6>
+            </div>
+            <div class=" link talkT nameD " target="_parent">
+                <h6 class="initials">DH </h6> <br>
+                <h6 class="fullName">David Harvey</h6>
+                <br>
+                <h6 class="talkName">The people vs The Trolls: cyberbullying and the law</h6>
+            </div>
+            <div class=" link talkW nameR " target="_parent">
+                <h6 class="initials">RS </h6> <br>
+                <h6 class="fullName">Rory Steyn</h6>
+                <br>
+                <h6 class="talkName">Walking with Mandela: small moments with a great man</h6>
+            </div>
+            <div class=" link talkW nameM " target="_parent">
+                <h6 class="initials">MMQ </h6> <br>
+                <h6 class="fullName">Modern Māori Quet</h6>
+                <br>
+                <h6 class="talkName">Whanau: building a bridge from performer to audience</h6>
+            </div>
+            <div class=" link talkY nameJ " target="_parent">
+                <h6 class="initials">JB </h6> <br>
+                <h6 class="fullName">Jayne Bailey</h6>
+                <br>
+                <h6 class="talkName">Yes: the word that built an orphanage</h6>
+            </div>
+        
+        
+        
+        
+        
+            <div class=" link talkA nameS " target="_parent">
+                <h6 class="initials">SS </h6> <br>
+                <h6 class="fullName">Sam Stubbs</h6>
+                <br>
+                <h6 class="talkName">A New Age of Shareholder Democracy</h6>
+            </div>
+            <div class=" link talkB nameL " target="_parent">
+                <h6 class="initials">LK </h6> <br>
+                <h6 class="fullName">Lisa King</h6>
+                <br>
+                <h6 class="talkName">Buy on. Give one: A business model feeding hungry kids</h6>
+            </div>
+            <div class=" link talkC nameS " target="_parent">
+                <h6 class="initials">SM </h6> <br>
+                <h6 class="fullName">Shaveer Mirpuri</h6>
+                <br>
+                <h6 class="talkName">Creating unfair advantage in business</h6>
+            </div>
+            <div class=" link talkD nameE " target="_parent">
+                <h6 class="initials">EPD </h6> <br>
+                <h6 class="fullName">Emeline Paat-Dahlstrom</h6>
+                <br>
+                <h6 class="talkName">Democratising the Space Industry</h6>
+            </div>
+            <div class=" link talkE nameW " target="_parent">
+                <h6 class="initials">WM </h6> <br>
+                <h6 class="fullName">William Watson</h6>
+                <br>
+                <h6 class="talkName">Ending war using guitars instead of guns</h6>
+            </div>
+            <div class=" link talkE nameJ " target="_parent">
+                <h6 class="initials">JW </h6> <br>
+                <h6 class="fullName">Jahra 'Rager' Wasasala</h6>
+                <br>
+                <h6 class="talkName">Exploring identity through form</h6>
+            </div>
+            <div class=" link talkF nameP " target="_parent">
+                <h6 class="initials">PB </h6> <br>
+                <h6 class="fullName">Pete Bethune</h6>
+                <br>
+                <h6 class="talkName">Find a cause worth dying for</h6>
+            </div>
+            <div class=" link talkF nameJ " target="_parent">
+                <h6 class="initials">JA </h6> <br>
+                <h6 class="fullName">Juliet Arnott</h6>
+                <br>
+                <h6 class="talkName">From wastefulness to resourcefulness</h6>
+            </div>
+            <div class=" link talkH nameC " target="_parent">
+                <h6 class="initials">CS </h6> <br>
+                <h6 class="fullName">Cameron Sims</h6>
+                <br>
+                <h6 class="talkName">Hemp: Food for life</h6>
+            </div>
+            <div class=" link talkL nameD " target="_parent">
+                <h6 class="initials">DR </h6> <br>
+                <h6 class="fullName">David Razowsky</h6>
+                <br>
+                <h6 class="talkName">Life: The Process is the Product</h6>
+            </div>
+            <div class=" link talkM nameN " target="_parent">
+                <h6 class="initials">NP </h6> <br>
+                <h6 class="fullName">Nigel Parker</h6>
+                <br>
+                <h6 class="talkName">Making Change Stick</h6>
+            </div>
+            <div class=" link talkT nameA " target="_parent">
+                <h6 class="initials">AJ </h6> <br>
+                <h6 class="fullName">Angie Judge</h6>
+                <br>
+                <h6 class="talkName">The future of museums in a big data world</h6>
+            </div>
+            <div class=" link talkT nameA " target="_parent">
+                <h6 class="initials">AM </h6> <br>
+                <h6 class="fullName">Alexander MacDonald</h6>
+                <br>
+                <h6 class="talkName">The narrative Origins of Spaceflight</h6>
+            </div>
+            <div class=" link talkT nameM " target="_parent">
+                <h6 class="initials">MC </h6> <br>
+                <h6 class="fullName">Michael Corballis</h6>
+                <br>
+                <h6 class="talkName">The Origins and Evolution of Language</h6>
+            </div>
+            <div class=" link talkT nameM " target="_parent">
+                <h6 class="initials">AF </h6> <br>
+                <h6 class="fullName">Anna Faber</h6>
+                <br>
+                <h6 class="talkName">The South Korean Machine</h6>
+            </div>
+            <div class=" link talkT nameA " target="_parent">
+                <h6 class="initials">AC RP </h6> <br>
+                <h6 class="fullName">Andy Crowe & Rui Peng</h6>
+                <br>
+                <h6 class="talkName">The Unlikely Neighbourhoods of Innovation</h6>
+            </div>
+            <div class=" link talkT nameY " target="_parent">
+                <h6 class="initials">WA </h6> <br>
+                <h6 class="fullName">Yoseph Ayele</h6>
+                <br>
+                <h6 class="talkName">The way we think about immigratin is flawed</h6>
+            </div>
+            <div class=" link talkT nameM " target="_parent">
+                <h6 class="initials">MC </h6> <br>
+                <h6 class="fullName">Mai Chen</h6>
+                <br>
+                <h6 class="talkName">Throwing a rock at the tiger: Accelerating your ability to adapt</h6>
+            </div>
+            <div class=" link talkT nameL " target="_parent">
+                <h6 class="initials">LM </h6> <br>
+                <h6 class="fullName">Liam Malone</h6>
+                <br>
+                <h6 class="talkName">Turning diability into ability</h6>
+            </div>
+            <div class=" link talkU nameC " target="_parent">
+                <h6 class="initials">CP </h6> <br>
+                <h6 class="fullName">Chris Pemberton</h6>
+                <br>
+                <h6 class="talkName">Unlock your creative superpowers</h6>
+            </div>
+        
+        
+        
+        
+        
+            <div class=" link talkB nameS " target="_parent">
+                <h6 class="initials">SS </h6> <br>
+                <h6 class="fullName">Sarah Strong</h6>
+                <br>
+                <h6 class="talkName">Breaking rhe silence: Reporting historical sexual assault</h6>
+            </div>
+            <div class=" link talkC nameE " target="_parent">
+                <h6 class="initials">EW </h6> <br>
+                <h6 class="fullName">Eliot Witters</h6>
+                <br>
+                <h6 class="talkName">Casanova Walks East 14th</h6>
+            </div>
+            <div class=" link talkD nameI " target="_parent">
+                <h6 class="initials">IF </h6> <br>
+                <h6 class="fullName">Imche Fourie</h6>
+                <br>
+                <h6 class="talkName">Deep Tech: Investing in our future</h6>
+            </div>
+            <div class=" link talkF nameF " target="_parent">
+                <h6 class="initials">FFT </h6> <br>
+                <h6 class="fullName">Food for thought</h6>
+                <br>
+                <h6 class="talkName">Food for thought</h6>
+            </div>
+            <div class=" link talkF nameJ " target="_parent">
+                <h6 class="initials">JT </h6> <br>
+                <h6 class="fullName">Jazz Thornton</h6>
+                <br>
+                <h6 class="talkName">From suicidal to hopeful, how I learnt to fight</h6>
+            </div>
+            <div class=" link talkH nameI " target="_parent">
+                <h6 class="initials">IW </h6> <br>
+                <h6 class="fullName">Israel 'Izzy' Whitley</h6>
+                <br>
+                <h6 class="talkName">Hard work, works</h6>
+            </div>
+            <div class=" link talkI nameP " target="_parent">
+                <h6 class="initials">PN </h6> <br>
+                <h6 class="fullName">Pania Newton</h6>
+                <br>
+                <h6 class="talkName">Ihumatao: Recognising indigenous heritage</h6>
+            </div>
+            <div class=" link talkL nameE " target="_parent">
+                <h6 class="initials">EW </h6> <br>
+                <h6 class="fullName">Eliot Witters</h6>
+                <br>
+                <h6 class="talkName">Late Night Redeo</h6>
+            </div>
+            <div class=" link talkO nameP " target="_parent">
+                <h6 class="initials">PC </h6> <br>
+                <h6 class="fullName">Pete Ceglinski</h6>
+                <br>
+                <h6 class="talkName">Ocean Plastic - everybody's responsible</h6>
+            </div>
+            <div class=" link talkO nameZ " target="_parent">
+                <h6 class="initials">ZQ </h6> <br>
+                <h6 class="fullName">Zeshan Qureshi</h6>
+                <br>
+                <h6 class="talkName">Our healthcare system are making doctors mentally ill</h6>
+            </div>
+            <div class=" link talkP nameF " target="_parent">
+                <h6 class="initials">FM </h6> <br>
+                <h6 class="fullName">Fraser McConnell</h6>
+                <br>
+                <h6 class="talkName">Purpose over profit</h6>
+            </div>
+            <div class=" link talkR nameD " target="_parent">
+                <h6 class="initials">DD </h6> <br>
+                <h6 class="fullName">David Downs</h6>
+                <br>
+                <h6 class="talkName">Reflections of a Genetically Modified Optimist</h6>
+            </div>
+            <div class=" link talkS nameA " target="_parent">
+                <h6 class="initials">AN </h6> <br>
+                <h6 class="fullName">Aaja Nachle</h6>
+                <br>
+                <h6 class="talkName">Sashaktikaran</h6>
+            </div>
+            <div class=" link talkS nameS " target="_parent">
+                <h6 class="initials">ST </h6> <br>
+                <h6 class="fullName">Swee Tan</h6>
+                <br>
+                <h6 class="talkName">Strawberry Birthmarks and a radical way of looking at cancer</h6>
+            </div>
+            <div class=" link talkT nameH " target="_parent">
+                <h6 class="initials">HK </h6> <br>
+                <h6 class="fullName">Hēmi Kelly</h6>
+                <br>
+                <h6 class="talkName">Te Reo Maori: A new era for the language</h6>
+            </div>
+            <div class=" link talkT nameK " target="_parent">
+                <h6 class="initials">KW </h6> <br>
+                <h6 class="fullName">Katie Williams</h6>
+                <br>
+                <h6 class="talkName">The Coffin Club: Makers of fine affordable underground furniture</h6>
+            </div>
+            <div class=" link talkT nameA " target="_parent">
+                <h6 class="initials">AB </h6> <br>
+                <h6 class="fullName">Andrew Barnes</h6>
+                <br>
+                <h6 class="talkName">The Four-Day Week</h6>
+            </div>
+            <div class=" link talkT nameD " target="_parent">
+                <h6 class="initials">DG </h6> <br>
+                <h6 class="fullName">Daniel Gudsell</h6>
+                <br>
+                <h6 class="talkName">The Future of Wood</h6>
+            </div>
+            <div class=" link talkU nameR " target="_parent">
+                <h6 class="initials">RH </h6> <br>
+                <h6 class="fullName">Richie Hardcore</h6>
+                <br>
+                <h6 class="talkName">Unpacking unhealthy masculinity, teaching boys to be better men</h6>
+            </div>
+            <div class=" link talkU nameJ " target="_parent">
+                <h6 class="initials">JQ </h6> <br>
+                <h6 class="fullName">Jess Quinn</h6>
+                <br>
+                <h6 class="talkName">Unreality: Why are we chasing an unachievable idea of perfection</h6>
+            </div>
+            <div class=" link talkW nameG " target="_parent">
+                <h6 class="initials">GS </h6> <br>
+                <h6 class="fullName">Grace Stratton</h6>
+                <br>
+                <h6 class="talkName">Why your business needs accessibility</h6>
+            </div>
+        
+        
+        
+        
+            <div class=" link talkB nameS " target="_parent">
+                <h6 class="initials">SCB </h6> <br>
+                <h6 class="fullName">Simon Che de Boer</h6>
+                <br>
+                <h6 class="talkName">Backing up the planet: disitsing culture, history and heritage</h6>
+            </div>
+            <div class=" link talkB nameT " target="_parent">
+                <h6 class="initials">TF </h6> <br>
+                <h6 class="fullName">Tony Fernando</h6>
+                <br>
+                <h6 class="talkName">Body Clocks, Sleep and Society</h6>
+            </div>
+            <div class=" link talkC nameK " target="_parent">
+                <h6 class="initials">KG </h6> <br>
+                <h6 class="fullName">Kris Gledhill</h6>
+                <br>
+                <h6 class="talkName">Corporate law reform to save the world</h6>
+            </div>
+            <div class=" link talkD nameA " target="_parent">
+                <h6 class="initials">AL </h6> <br>
+                <h6 class="fullName">Angela Lim</h6>
+                <br>
+                <h6 class="talkName">Disrupting healthcare without hurting it</h6>
+            </div>
+            <div class=" link talkH nameA " target="_parent">
+                <h6 class="initials">AJ </h6> <br>
+                <h6 class="fullName">Annamarie Jamieson</h6>
+                <br>
+                <h6 class="talkName">How to build inclusion into the everyday</h6>
+            </div>
+            <div class=" link talkI nameD " target="_parent">
+                <h6 class="initials">DS </h6> <br>
+                <h6 class="fullName">Dmitry Selitskiy</h6>
+                <br>
+                <h6 class="talkName">Interact with any device using your mind</h6>
+            </div>
+            <div class=" link talkL nameS " target="_parent">
+                <h6 class="initials">SRT </h6> <br>
+                <h6 class="fullName">Sonya Renee Taylor</h6>
+                <br>
+                <h6 class="talkName">Let's Replace Cancel Culture with Accountability</h6>
+            </div>
+            <div class=" link talkL nameG " target="_parent">
+                <h6 class="initials">GM </h6> <br>
+                <h6 class="fullName">Getrude Matshe</h6>
+                <br>
+                <h6 class="talkName">Living Ubuntu; we rise by lifting others</h6>
+            </div>
+            <div class=" link talkP nameR " target="_parent">
+                <h6 class="initials">RN </h6> <br>
+                <h6 class="fullName">Rose Northey</h6>
+                <br>
+                <h6 class="talkName">Poetry on tow hair, birds, and the fetishization of modesty</h6>
+            </div>
+            <div class=" link talkP nameA " target="_parent">
+                <h6 class="initials">AR </h6> <br>
+                <h6 class="fullName">Andrea Reid</h6>
+                <br>
+                <h6 class="talkName">Pollinating pathways to a bettwe future</h6>
+            </div>
+            <div class=" link talkT nameT " target="_parent">
+                <h6 class="initials">TO </h6> <br>
+                <h6 class="fullName">Thomas Owen</h6>
+                <br>
+                <h6 class="talkName">The loss of privilege</h6>
+            </div>
+            <div class=" link talkW nameM " target="_parent">
+                <h6 class="initials">MR </h6> <br>
+                <h6 class="fullName">Max Rashbrooke</h6>
+                <br>
+                <h6 class="talkName">We need to rest democracy</h6>
+            </div>
+            <div class=" link talkA nameV " target="_parent">
+                <h6 class="initials">VV </h6> <br>
+                <h6 class="fullName">Vincent Vuillard</h6>
+                <br>
+                <h6 class="talkName">A new model for the future of work</h6>
+            </div>
+            <div class=" link talkD nameC " target="_parent">
+                <h6 class="initials">CR </h6> <br>
+                <h6 class="fullName">Cassie Roma</h6>
+                <br>
+                <h6 class="talkName">Don't Worry About Finding Yourself, You're Already Found</h6>
+            </div>
+        
+            --> 
+
+            <div class="wrap">
+                <button id="toTheme">Theme</button>
+                <button id="viewPlaylist">Playlist</button>
+            </div>
+        </article>
+        <section id="speakerBar" class="bar">
+            <article id="speakerInfo">Speaker name, talk name, audio duration</article>
+            <!-- <progress id="seekbar" value="0" max="1"></progress> -->
+            <article id="speakerSelection">Selected speakers/playlist info</article>
+        </section>
+    </section>
+    <section id="player" class="full">
+        <h1 class="instructions">
+            Player
+        </h1>
+        <article class="box">
+            <div class="wrap">
+                <button id="toSpeakers">Speakers</button>
+                <button id="viewPlaylists">Playlists</button>
+            </div>
+        </article>
+        <section class="bar">
+            This is a bar
+        </section>
+    </section>
+  </main>
+
+    <audio src="#" id="audio" preload="none"></audio>
+
+    <div id="particles-js"></div>
+
+    <script src="http://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script src="main.js"></script>
+</body>
+
+</html>

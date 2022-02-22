@@ -1,0 +1,237 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Space Mono', monospace;
+}
+
+html {
+    color: white;
+}
+
+body {
+    background: black;
+    overflow: hidden;
+    height: 100%;
+    width: 100%;
+}
+
+main {
+    display: flex;
+    width: 400vw;
+    height: 100vh;
+    margin-left: -100%;
+    transition: 1s ease all;
+}
+
+.scrollBarNone::-webkit-scrollbar {
+    display: none;
+}
+
+.scrollBarNone {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+.full {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    width: 100%;
+    background-color: aqua;
+    border: .2em solid black;
+}
+
+.box {
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+    position: relative;
+}
+
+.wrap {
+    margin: auto;
+}
+
+button {
+    width: 90px;
+    height: 90px;
+    border-radius: 100%;
+    border: none;
+    margin: auto;
+    cursor: pointer;
+    z-index: 99;
+}
+
+button:hover {
+    background: grey;
+}
+
+.instructions {
+    width: 100%;
+    text-align: center;
+    height: 6em;
+    background: red;
+    padding-top: 2em;
+}
+
+.bar {
+    padding: 1em;
+    height: 9em;
+    background: lime;
+    margin-top: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    text-align: center;
+}
+
+#particles-js {
+    z-index: -10;
+    background-color: #000000;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+}
+    
+.link {
+    width: 80px;
+    height: 80px;
+    position: absolute;
+    border-radius: 100%;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    font-size: 0.8em;
+    transition: .2s ease all;
+    transform-origin: 100%, 100%;
+
+}
+
+.link:hover {
+    background: red;
+}
+
+.toBeSorted {
+    /* background: red; */
+    display: none;
+}
+
+.sorted {
+    background: blue;
+    display: flex;
+
+}
+
+.open {
+    transform: scale(1.2);
+    background: black;
+    color:white;
+}
+
+.greyOverlay {
+    background: #d6d6d6!important;
+    color: black;
+    box-shadow: 0px 0px 21px 22px #d6d6d6!important;
+}
+
+.greyOverlay:hover {
+    background: red!important;
+}
+
+#themeBar, #speakerBar {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+#themeSelection {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 0 4em ;
+    background: red;
+}
+
+#themeSelection article {
+    background: aqua;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row-reverse;
+    height: 80px;
+    width: 80px;
+    transition: .2s ease all;
+    border-radius: 100%;
+}
+
+#themeSelection article:hover {
+    background: blue;
+    cursor: pointer;
+}
+
+.link:hover .initials {
+    font-size: 0;
+    margin: 0;
+}
+
+.fullName, .talkName {
+    display: none;
+}
+
+.link:hover .fullName {
+    display: flex;
+}
+
+.shorthand {
+    font-size: 1em;
+    display: flex;
+}
+
+.longhand {
+    display: none;
+}
+
+p {
+    display: none;
+}
+
+#speakerInfo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    justify-content: center;
+}
+
+#seekbar {
+    width: 60%;
+    height: 1em;
+    margin-top: .5em;
+    background: rgb(211, 211, 211);
+    border-radius: 25px;
+}
+
+progress::-webkit-progress-bar {
+    background: rgb(211, 211, 211);
+    border-radius: 25px;
+
+}
+
+progress::-webkit-progress-value {
+    border-radius: 25px;
+    background-color: #777777;
+}
+
+#open .shorthand {
+    display: none;
+}
+
+#open .longhand {
+    display: flex;
+}
